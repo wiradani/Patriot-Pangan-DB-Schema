@@ -24,7 +24,24 @@ let userSchema = new Schema({
         enum: ['admin', 'patriot', 'donatur'],
         required: true
     },
+    details:{
+        birthDate: {
+            type: Date
+        },
+        mobile_phone:{
+            type: Number,
+             required: true,
+        },
+        home_phone:{
+            type: Number,
+            required: true,
+        }
+    },
     admin: {
+        joinDate:{
+            type: Date,
+            default: Date.now,
+        }
 
     },
     patriot: {
@@ -38,34 +55,37 @@ let userSchema = new Schema({
         },
         status: {
             type: String,
+            enum:['is ative','is not'],
+            required: true
         }
     },
     donatur: {
+        status: {
+            type: String,
+            enum:['is ative','is not'],
+            required: true
+        },
+        donasi: {
+            type: Number,
+            default: 0
+        },
+        campaign: {
+            type: Number,
+            default: 0
+        },
+        donasiDisalurkan: {
+            type: Number,
+            default: 0
+        },
+        ktpPicture: {
+            type: String
+        },
+        ktpAndSelfPicture: {
+            type: String
+        },
 
     },
-    // method: {
-    //     type: String,
-    //     enum: ['local', 'google'],
-    //     required: true
-    // },
-    // local: {
-    //     email: {
-    //         type: String,
-    //         lowercase: true
-    //     },
-    //     password: {
-    //         type: String,
-    //     }
-    // },
-    // google: {
-    //     id: {
-    //         type: String
-    //     },
-    //     email: {
-    //         type: String,
-    //         lowercase: true
-    //     }
-    // }
+   
 });
 
 // create a model
