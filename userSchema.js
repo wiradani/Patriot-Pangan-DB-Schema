@@ -24,6 +24,10 @@ let userSchema = new Schema({
         enum: ['admin', 'patriot', 'donatur'],
         required: true
     },
+    joinDate: {
+        type: Date,
+        default: Date.now,
+    },
     details:{
         birthDate: {
             type: Date
@@ -38,29 +42,25 @@ let userSchema = new Schema({
         }
     },
     admin: {
-        joinDate:{
-            type: Date,
-            default: Date.now,
+        status:{
+            type: String,
+            enum: ['admin', 'superAdmin'],
+            default: 'admin'
         }
-
     },
     patriot: {
-        joinDate: {
-            type: Date,
-            default: Date.now,
-        },
         jumlahLaporan: {
             type: Number,
             default: 0,
         },
-        status: {
+        isActive: {
             type: String,
             enum:['is ative','is not'],
             required: true
         }
     },
     donatur: {
-        status: {
+        isVerified: {
             type: String,
             enum:['is ative','is not'],
             required: true
