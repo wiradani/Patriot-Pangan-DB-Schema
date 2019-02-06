@@ -65,7 +65,8 @@ let laporanSchema = new Schema({
             required: true
         },
         x8:{
-            type: Boolean,
+            type: String,
+            enum :['kemarau','banjir','normal'],
             required: true
         },
         x9:{

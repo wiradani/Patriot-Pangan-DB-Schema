@@ -46,7 +46,17 @@ let userSchema = new Schema({
             type: String,
             enum: ['admin', 'superAdmin'],
             default: 'admin'
-        }
+        },
+        password:{
+            type:String,
+            required: true
+        },
+        ktpPicture: {
+            type: String
+        },
+        ktpAndSelfPicture: {
+            type: String
+        },
     },
     patriot: {
         jumlahLaporan: {

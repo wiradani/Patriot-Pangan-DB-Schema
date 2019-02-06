@@ -17,19 +17,9 @@ let keluargaSchema = new Schema({
     pekerjaanKRT: {
         type: String
     },
-    bangunanTinggal: {
-        type: String,
-        enum: ['milik sendiri', 'kontrak', 'tidak ada'],
+    isSejahtera: {
+        type: Boolean,
         required: true
-    },
-    sumberAir: {
-        type: String,
-        enum: ['sungai', 'laut','pdam', 'tidak ada'],
-        required: true
-    },
-    sumberListrik:{
-        type: String,
-        enum: ['PLN','genset','tidak ada']
     },
     details:{
         provinsi:{
