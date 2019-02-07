@@ -5,9 +5,10 @@ let Schema = mongoose.Schema;
 let laporanSchema = new Schema({
     id: {
         type: String,
+        default: function genUUID() {uuid.v1()},
         required: true,
     },
-    userID: {
+    patriotID: {
         type: String,
         required: true,
     },

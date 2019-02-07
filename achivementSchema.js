@@ -2,33 +2,25 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 // create a schema
-let rewardSchema = new Schema({
+let achivementSchema = new Schema({
     
     id: {
         type: String,
         default: function genUUID() {uuid.v1()},
         required: true,
     },
-    namaReward: {
+    patriotID: {
         type: String,
         required: true
     },
-    deskripsi:{
-        type: String,
-        required: true
-    },
-    syaratReward:{
-        type: int,
-        required: true
-    },
-    badgeLogo:{
+    rewardID:{
         type: String,
         required: true
     }
 });
 
 // create a model
-let rewards = mongoose.model('rewards', userSchema);
+let Achivement = mongoose.model('achivement', achivementSchema);
 
 // export the model
-module.exports = Address;
+module.exports = Achivement;

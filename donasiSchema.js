@@ -5,9 +5,14 @@ let Schema = mongoose.Schema;
 let donasiSchema = new Schema({
     id: {
         type: String,
+        default: function genUUID() {uuid.v1()},
         required: true,
     },
     userID: {
+        type: String,
+        required: true,
+    },
+    campaignID: {
         type: String,
         required: true,
     },
@@ -19,15 +24,7 @@ let donasiSchema = new Schema({
     pesan: {
         type: String
     },
-    isDone: {
-        type: Boolean,
-        required: true
-    },
     uang:{
-        kodeUnik:{
-            type: Number,
-            required: true
-        },
         jumlah:{
             type: Number,
             required: true

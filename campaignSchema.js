@@ -5,18 +5,23 @@ let Schema = mongoose.Schema;
 let campaignSchema = new Schema({
     id: {
         type: String,
+        default: function genUUID() {uuid.v1()},
         required: true,
     },
     userID: {
         type: String,
         required: true,
     },
+    judulCampaign: {
+        type: String,
+        required: true
+    },
     fotoCampaign: {
         type: String,
         required: true
     },
-    namaCampaign: {
-        type: String,
+    isVerified: {
+        type: Boolean,
         required: true
     },
     dateStart: {

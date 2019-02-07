@@ -5,9 +5,10 @@ let Schema = mongoose.Schema;
 let keluargaSchema = new Schema({
     id: {
         type: String,
+        default: function genUUID() {uuid.v1()},
         required: true,
     },
-    userID: {
+    patriotID: {
         type: String
     },
     namaKRT: {
@@ -26,7 +27,7 @@ let keluargaSchema = new Schema({
             type: String,
             required: true
         },
-        kota:{
+        Kabupaten:{
             type: String,
             required: true
         },
@@ -34,7 +35,7 @@ let keluargaSchema = new Schema({
             type: String,
             required: true
         },
-        kelurahan:{
+        desa:{
             type: String,
             required: true
         },

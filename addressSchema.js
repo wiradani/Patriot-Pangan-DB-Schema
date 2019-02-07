@@ -20,7 +20,7 @@ let addressSchema = new Schema({
         type: String,
         required: true
     },
-    kota:{
+    kabupaten:{
         type: String,
         required: true
     },
@@ -28,7 +28,7 @@ let addressSchema = new Schema({
         type: String,
         required: true
     },
-    kelurahan:{
+    desa:{
         type: String,
         required: true
     },

@@ -5,6 +5,7 @@ let Schema = mongoose.Schema;
 let userSchema = new Schema({
     id: {
         type: String,
+        default: function genUUID() {uuid.v1()},
         required: true,
     },
     email: {
@@ -16,17 +17,13 @@ let userSchema = new Schema({
         type: String,
         required: true
     },
-    profilePicture: {
-        type: String
-    },
     privilege: {
         type: String,
         enum: ['admin', 'patriot', 'donatur'],
         required: true
     },
-    joinDate: {
-        type: Date,
-        default: Date.now,
+    profilePicture: {
+        type: String
     },
     details:{
         birthDate: {
@@ -42,21 +39,10 @@ let userSchema = new Schema({
         }
     },
     admin: {
-        status:{
-            type: String,
-            enum: ['admin', 'superAdmin'],
-            default: 'admin'
-        },
         password:{
             type:String,
             required: true
-        },
-        ktpPicture: {
-            type: String
-        },
-        ktpAndSelfPicture: {
-            type: String
-        },
+        }
     },
     patriot: {
         jumlahLaporan: {
@@ -67,7 +53,17 @@ let userSchema = new Schema({
             type: String,
             enum:['is ative','is not'],
             required: true
-        }
+        },
+        joinDate: {
+            type: Date,
+            default: Date.now,
+        },
+        ktpImage: {
+            type: String
+        },
+        selfImage: {
+            type: String
+        },
     },
     donatur: {
         isVerified: {
@@ -75,22 +71,26 @@ let userSchema = new Schema({
             enum:['is ative','is not'],
             required: true
         },
-        donasi: {
+        joinDate: {
+            type: Date,
+            default: Date.now,
+        },
+        totalDonasi: {
             type: Number,
             default: 0
         },
-        campaign: {
+        totalCampaign: {
             type: Number,
             default: 0
         },
-        donasiDisalurkan: {
+        totalNilaiDonasi: {
             type: Number,
             default: 0
         },
-        ktpPicture: {
+        ktpImage: {
             type: String
         },
-        ktpAndSelfPicture: {
+        selfImage: {
             type: String
         },
 
