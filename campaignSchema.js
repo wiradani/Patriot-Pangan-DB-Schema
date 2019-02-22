@@ -20,6 +20,28 @@ let campaignSchema = new Schema({
         type: String,
         required: true
     },
+    fotoPendukung: {
+        foto1:{
+            type: string,
+             required: false,
+        },
+        foto2:{
+            type: string,
+             required: false,
+        },
+        foto3:{
+            type: string,
+             required: false,
+        },
+        foto4:{
+            type: string,
+             required: false,
+        },
+        foto5:{
+            type: string,
+             required: false,
+        },
+    },
     isVerified: {
         type: Boolean,
         required: true
@@ -36,7 +58,11 @@ let campaignSchema = new Schema({
     deskripsi:{
         type: String,
         required: true
-    }, 
+    },
+    detail:{
+        type: String,
+        required: true
+    },  
     isDone:{
         type: Boolean,
         required: true
@@ -48,7 +74,11 @@ let campaignSchema = new Schema({
     danaTerkumpul:{
         type: float,
         required: true
-    }
+    },
+    katagori:{
+        type: String,
+        required: true
+    },  
    
 });
 
